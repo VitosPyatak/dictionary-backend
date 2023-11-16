@@ -1,4 +1,5 @@
-import { delimiters, regex } from "./configs";
+import { Callback } from "aws-lambda";
+import { delimiters, headers, regex } from "./configs";
 import { RequestBody, WordCountResultRecord, WordType } from "./types";
 
 export const parseRequestBody = (event): RequestBody | null => {
@@ -18,4 +19,12 @@ export const getInitialWordCountResultRecord = (): WordCountResultRecord => {
         record[wordType] = 0;
         return record;
     }, {} as WordCountResultRecord);
+}
+
+export const successfullResponse = (callback: Callback, body: any) => {
+    return callback(null, { statusCode: 200, body: JSON.stringify(body), headers });
+}
+
+export const errorResponse = (callback: Callback, error: any) => {
+    return callback(null, { statusCode: 400, body: JSON.stringify(error), headers });
 }

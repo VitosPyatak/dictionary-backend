@@ -13,6 +13,10 @@ export const delimiters = {
     whiteSpace: ' ',
 }
 
+export const headers = {
+    'Content-Type': 'application/json',
+}
+
 export const dictionary: Record<WordType, string[]> = {
     noun: ["cat", "book", "table", "house", "dog", "car", "tree", "bird", "friend", "city", "computer", "chair", "sun", "flower", "music", "child", "parent", "food", "water", "phone", "time", "money", "job", "world", "love", "school", "student", "teacher", "doctor", "hospital"],
     verb: ["run", "eat", "sleep", "dance", "sing", "swim", "write", "read", "play", "talk", "work", "study", "drive", "think", "create", "listen", "watch", "buy", "help", "cook", "travel", "exercise", "paint", "draw", "explore", "solve", "smile", "laugh", "dream", "relax"],
