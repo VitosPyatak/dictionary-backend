@@ -15,6 +15,7 @@ export const delimiters = {
 
 export const headers = {
     'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
 }
 
 export const dictionary: Record<WordType, string[]> = {

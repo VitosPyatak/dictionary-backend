@@ -1,6 +1,6 @@
 service: dictionary-backend
 
-frameworkVersion: "3"
+frameworkVersion: '3'
 
 provider:
   name: aws
@@ -11,7 +11,7 @@ plugins:
   - serverless-offline
 
 package:
-  exclude: 
+  exclude:
     - node_modules/**
     - .gitignore
     - .git/**
@@ -25,3 +25,4 @@ functions:
       - http:
           path: words/count
           method: post
+          cors: true
