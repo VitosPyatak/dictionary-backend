@@ -1,0 +1,27 @@
+service: dictionary-backend
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+package:
+  exclude: 
+    - node_modules/**
+    - .gitignore
+    - .git/**
+  include:
+    - src/**
+
+functions:
+  countWords:
+    handler: src/handler.countWords
+    events:
+      - http:
+          path: words/count
+          method: post
